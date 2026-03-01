@@ -1,0 +1,41 @@
+* {
+	font-family: "StratumNo2";
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0px;
+}
+
+window#waybar {
+    margin-top: 0;
+    border-radius: 0;
+    background-color: transparent;
+    /*box-shadow: 0 0 1 1 #A7C080;*/
+}
+
+
+#workspaces {
+   background-color: transparent;
+   margin-top: 40;
+}
+
+#workspaces button {
+    background-color: alpha(#777777, 0.85);
+    color: #000000;
+}
+
+#workspaces button:hover {
+    background: #435534;
+    border: 0px solid transparent;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background: alpha(#555555, 0.85);
+    color: #000000;
+}
+
+#clock,
+#battery,
+#network {
+    color: #ffffff;
+    
+}

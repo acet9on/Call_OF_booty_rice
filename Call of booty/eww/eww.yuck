@@ -1,0 +1,85 @@
+(defwindow pin
+  :monitor '["<primary>", 2, 1, 0]'
+  :windowtype "dock"
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :x "786px"
+    :y "183px"
+    :width "85px"
+    :height "75px"
+    :anchor "top right")
+ (pin)
+)
+
+(defwindow location
+  :monitor '["<primary>", 2, 1, 0]'
+  :windowtype "dock"
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :x "525px"
+    :y "185px"
+    :width "85px"
+    :height "70px"
+    :anchor "top right")
+ (location)
+)
+
+(defwindow bar1
+  :monitor '["<primary>", 2, 1, 0]'
+  :windowtype "dock"
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :x "525px"
+    :y "0px"
+    :width "85px"
+    :height "70px"
+    :anchor "top right")
+ (bar1)
+)
+
+(defwindow bar2
+  :monitor '["<primary>", 2, 1, 0]'
+  :windowtype "dock"
+  :stacking "bg"
+  :namespace "eww"
+  :geometry (geometry
+    :x "525px"
+    :y "0px"
+    :width "85px"
+    :height "70px"
+    :anchor "top left")
+ (bar2)
+)
+
+
+
+(defpoll loc :interval "5s"
+  `curl -s https://ipinfo.io/json | jq -r '.timezone, .loc'`)
+
+
+(defwidget pin []
+  (box :height 100 :width 0 :class "container" :vexpand true :hexpand true
+    (image :path "/home/think/cursor.png" :image-width 110)
+  )
+)
+
+(defwidget location []
+  (box :height 10 :width 270 :class "container" :vexpand true :hexpand true
+    (label :text {loc})
+  )
+)
+
+(defwidget bar1 []
+  (box :height 10 :width 270 :class "container" :vexpand true :hexpand true
+    (label :text "")
+  )
+)
+
+(defwidget bar2 []
+  (box :height 10 :width 270 :class "container" :vexpand true :hexpand true
+    (label :text "")
+  )
+)
